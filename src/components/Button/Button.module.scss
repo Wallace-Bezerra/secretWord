@@ -1,0 +1,32 @@
+@import "../../styles/variables.scss";
+
+.btn {
+  border: none;
+
+  &.play {
+    background: $secondary-linear;
+    box-shadow: 0px 0px 6px #fcdd09;
+    &:hover {
+      filter: brightness(1.2);
+      box-shadow: 0px 0px 15px #fcdd09;
+      transform: scale(1.02);
+    }
+  }
+  &.primary {
+    background: $primary-linear;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 39px;
+    color: #f5eeee;
+    border: 1px solid #ffffff;
+    box-shadow: 0px 0px 6px rgba(255, 255, 255, 0.5);
+  }
+  border-radius: 18px;
+  padding: 14px 46px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  color: rgba(0, 0, 0, 0.87);
+  cursor: pointer;
+  transition: filter 0.5s ease, box-shadow 0.5s ease, transform 0.6s ease;
+}

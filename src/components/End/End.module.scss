@@ -1,0 +1,58 @@
+@import "../../styles/variables.scss";
+
+.bg {
+  background-color: hsla(234, 15%, 43%, 0.4);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.card {
+  animation: show 0.8s ease forwards;
+  width: 724px;
+  // height: 360px;
+  background: $primary-linear;
+  border-radius: 25px;
+  display: flex;
+  gap: 37px;
+  padding-block: 50px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    font-weight: 700;
+    font-size: 62px;
+    line-height: 75px;
+  }
+  .scoreGame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 39px;
+    width: 481px;
+    height: 94px;
+
+    background: #31425c;
+    border-radius: 12px;
+  }
+  .btns {
+    display: flex;
+    gap: 24px;
+  }
+}
+@keyframes show {
+  0% {
+    transform: translateY(0px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}

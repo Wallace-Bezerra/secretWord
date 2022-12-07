@@ -1,0 +1,93 @@
+@import "../../styles/variables.scss";
+
+.gameBoard {
+  margin: auto;
+  height: 609px;
+  background-color: transparent;
+  text-align: center;
+  h1 {
+    margin-bottom: 42px;
+  }
+  .inputLetter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 49px;
+    input {
+      border: none;
+      width: 78px;
+      height: 78px;
+    }
+  }
+  .wrongLetters {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 26px;
+    margin-block: 80px;
+    // transition: all 4s;
+    input {
+      border: none;
+      width: 78px;
+      height: 84px;
+      background: radial-gradient(81.03% 81.03% at 50% 12.07%, rgba(255, 11, 11, 0.76) 0%, rgba(232, 9, 9, 0.76) 100%);
+      box-shadow: 0px 0px 20px 2px rgba(240, 16, 16, 0.6);
+      border-radius: 5px;
+      color: white;
+      font-size: 46px;
+      line-height: 56px;
+      animation: slide 0.9s cubic-bezier(0.755, 0.05, 0.855, 0.25);
+      &:disabled {
+        color: #ffffff;
+      }
+    }
+  }
+  .attempt {
+    margin: 0 auto;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 39px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    width: 294px;
+    height: 56px;
+    background: linear-gradient(345.56deg, #1d232f 37.11%, #4d5565 133.34%);
+    border-radius: 8px;
+  }
+
+  input {
+    width: 63px;
+    height: 65px;
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    background: #ffffff;
+    box-shadow: 0px 0px 19px rgba(255, 255, 255, 0.25);
+    border-radius: 8px;
+    &:disabled {
+      appearance: none;
+      color: #000;
+    }
+  }
+}
+
+@keyframes show {
+  0% {
+    transform: translateY(0px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes slide {
+  0% {
+    transform: translateX(200px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}

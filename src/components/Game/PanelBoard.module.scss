@@ -1,0 +1,40 @@
+@import "../../styles/variables.scss";
+
+.panelBoard {
+  padding-inline: 40px;
+  margin: 0 auto;
+  max-width: min-content;
+  height: 180px;
+  background-color: transparent;
+  box-shadow: 0px 0px 9px rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(18px);
+  border: 17px solid #ffffffcf;
+  border-radius: 10px;
+  margin-bottom: 52px;
+  .panelLetter {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    .letter {
+      // animation: blinker 0.75s linear infinite;
+      // color: red;
+      width: 85px;
+      font-size: 46px;
+      height: 91px;
+      text-transform: uppercase;
+      text-align: center;
+      background: linear-gradient(92.79deg, #ffffff 38.38%, #ffffff 73.92%);
+      border: 1px solid rgba(0, 0, 0, 0.79);
+      box-shadow: 0px 0px 4px #ffffff;
+      border-radius: 5px;
+      
+    }
+  }
+}
+// @keyframes blinker {
+//   50% {
+//       opacity: 0;
+//   }
+// }

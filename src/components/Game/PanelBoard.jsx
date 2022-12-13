@@ -1,6 +1,6 @@
 import style from "./PanelBoard.module.scss";
 
-function PanelBoard({ pickedWord, letters, guessedLetters }) {
+function PanelBoard({ letters, guessedLetters }) {
   return (
     <div className={style.panelBoard}>
       <div className={style.panelLetter}>

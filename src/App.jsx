@@ -100,11 +100,13 @@ function App() {
       if (guessedLetters.length === uniqueLetters.length) {
         let newScore = score;
         setScore((newScore += 100));
-        
+
         console.log(score);
         console.log("ganhou");
-        setGuessedLetters([]);
-        startGame();
+        setTimeout(() => {
+          setGuessedLetters([]);
+          startGame();
+        }, 4000);
       }
     }
   }, [guessedLetters, letters, startGame]);

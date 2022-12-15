@@ -2,29 +2,35 @@
 
 .gameBoard {
   margin: auto;
+  margin-top: 100px;
   height: 609px;
   background-color: transparent;
   text-align: center;
+
   h1 {
     margin-bottom: 42px;
   }
+
   .inputLetter {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 49px;
+
     input {
       border: none;
       width: 78px;
       height: 78px;
     }
   }
+
   .wrongLetters {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 26px;
     margin-block: 80px;
+
     // transition: all 4s;
     input {
       border: none;
@@ -37,11 +43,13 @@
       font-size: 46px;
       line-height: 56px;
       animation: slide 0.9s cubic-bezier(0.755, 0.05, 0.855, 0.25);
+
       &:disabled {
         color: #ffffff;
       }
     }
   }
+
   .attempt {
     margin: 0 auto;
     font-weight: 600;
@@ -66,6 +74,7 @@
     background: #ffffff;
     box-shadow: 0px 0px 19px rgba(255, 255, 255, 0.25);
     border-radius: 8px;
+
     &:disabled {
       appearance: none;
       color: #000;
@@ -78,15 +87,18 @@
     transform: translateY(0px);
     opacity: 0;
   }
+
   100% {
     transform: translateY(0px);
     opacity: 1;
   }
 }
+
 @keyframes slide {
   0% {
     transform: translateX(200px);
   }
+
   100% {
     transform: translateX(0px);
   }

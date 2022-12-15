@@ -1,22 +1,26 @@
 @import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
 
 .panelBoard {
   padding-inline: 40px;
+  padding-block: 40px;
   margin: 0 auto;
   max-width: min-content;
-  height: 180px;
+  // height: 180px;
   background-color: transparent;
   box-shadow: 0px 0px 9px rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(18px);
   border: 17px solid #ffffffcf;
   border-radius: 10px;
   margin-bottom: 52px;
+
   .panelLetter {
     display: flex;
     gap: 8px;
     justify-content: center;
     align-items: center;
     height: 100%;
+
     .letter {
       // animation: blinker 0.75s linear infinite;
       // color: red;
@@ -29,10 +33,21 @@
       border: 1px solid rgba(0, 0, 0, 0.79);
       box-shadow: 0px 0px 4px #ffffff;
       border-radius: 5px;
-      
+
+    }
+  }
+
+  @include responsive(800px) {
+    background-color: red;
+
+    .panelLetter {
+      min-width: 498px;
+      flex-wrap: wrap;
+
     }
   }
 }
+
 // @keyframes blinker {
 //   50% {
 //       opacity: 0;

@@ -29,6 +29,7 @@ function App() {
   const [wrongLetters, setWrongLetters] = useState([]);
   const [guesses, setGuesses] = useState(10);
   const [score, setScore] = useState(0);
+  const [winner, setWinner] = useState(false);
 
   useEffect(() => {
     if (guesses <= 0) {
@@ -40,6 +41,7 @@ function App() {
   }, [guesses]);
 
   function cleanState() {
+    setWinner(false);
     setWrongLetters([]);
     setGuessedLetters([]);
   }
@@ -103,6 +105,7 @@ function App() {
 
         console.log(score);
         console.log("ganhou");
+        setWinner(true)
         setTimeout(() => {
           setGuessedLetters([]);
           startGame();
@@ -126,6 +129,7 @@ function App() {
       {gameStage === "game" && (
         <Game
           verifyLetter={verifyLetter}
+          winner={winner}
           pickedWord={pickedWord}
           pickedCategory={pickedCategory}
           letters={letters}

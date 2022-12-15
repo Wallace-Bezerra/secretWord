@@ -1,8 +1,12 @@
 import style from "./PanelBoard.module.scss";
-
-function PanelBoard({ letters, guessedLetters }) {
+import { motion } from "framer-motion";
+function PanelBoard({ letters, guessedLetters, winner }) {
   return (
-    <div className={style.panelBoard}>
+    <motion.div
+      className={style.panelBoard}
+      animate={{ border: true ? "solid 17px #FFFB04" : "white", opacity: [0, 1] }}
+      transition={{ loop: Infinity, duration: 0.8, }}
+    >
       <div className={style.panelLetter}>
         {letters.map((letter, index) => {
           return guessedLetters.includes(letter) ? (
@@ -24,7 +28,7 @@ function PanelBoard({ letters, guessedLetters }) {
           );
         })}
       </div>
-    </div>
+    </motion.div >
   );
 }
 

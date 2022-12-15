@@ -1,10 +1,12 @@
 import { useRef, useState } from "react";
 import Button from "../Button/Button";
+import { motion } from "framer-motion";
 import style from "./GameBoard.module.scss";
 import PanelBoard from "./PanelBoard";
 
 function GameBoard({
   verifyLetter,
+  winner,
   pickedWord,
   letters,
   guessedLetters,
@@ -28,9 +30,16 @@ function GameBoard({
   }
 
   return (
-    <div className={style.gameBoard}>
+    <motion.div
+      className={style.gameBoard}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1 }}
+    >
       <h1>Tente uma letra e descubra a palavra</h1>
       <PanelBoard
+        winner={winner}
         pickedWord={pickedWord}
         letters={letters}
         guessedLetters={guessedLetters}
@@ -67,7 +76,7 @@ function GameBoard({
         <span>{guesses}</span>
         <span>TENTATIVAS</span>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

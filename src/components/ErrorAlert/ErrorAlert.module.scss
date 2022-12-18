@@ -1,0 +1,12 @@
+.errorAlert {
+  background: radial-gradient(81.03% 81.03% at 50% 12.07%, #ff540b 0%, #ff540b 100%);
+  box-shadow: 0px 0px 20px 3px rgba(255, 84, 11, 0.6);
+  border-radius: 20px;
+  font-weight: 400;
+  font-size: 25px;
+  padding: 25px 30px;
+  line-height: 19px;
+  position: absolute;
+  left: 90px;
+  width: max-content;
+}

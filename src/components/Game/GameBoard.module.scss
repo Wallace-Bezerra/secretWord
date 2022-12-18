@@ -2,7 +2,7 @@
 
 .gameBoard {
   margin: auto;
-  margin-top: 100px;
+  margin-top: 80px;
   height: 609px;
   background-color: transparent;
   text-align: center;
@@ -16,11 +16,17 @@
     align-items: center;
     justify-content: center;
     gap: 49px;
+    position: relative;
+    width: max-content;
+    margin-inline: auto;
 
     input {
       border: none;
       width: 78px;
       height: 78px;
+      &:focus-visible {
+        border: 2px solid red !important;
+      }
     }
   }
 
@@ -29,10 +35,11 @@
     align-items: center;
     justify-content: center;
     gap: 26px;
-    margin-block: 80px;
+    margin-block: 34px;
 
-    // transition: all 4s;
+    transition: all 1s ease;
     input {
+      margin-inline: 0;
       border: none;
       width: 78px;
       height: 84px;
@@ -94,12 +101,12 @@
   }
 }
 
-@keyframes slide {
-  0% {
-    transform: translateX(200px);
-  }
+// @keyframes slide {
+//   0% {
+//     transform: translateX(200px);
+//   }
 
-  100% {
-    transform: translateX(0px);
-  }
-}
+//   100% {
+//     transform: translateX(0px);
+//   }
+// }

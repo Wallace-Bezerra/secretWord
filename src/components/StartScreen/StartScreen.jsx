@@ -11,7 +11,6 @@ function StartScreen({ startGame }) {
           text="INICIAR O JOGO"
           typeButton="play"
         />
-        {/* <Button text="JOGAR" typeButton="primary" /> */}
       </div>
     </div>
   );

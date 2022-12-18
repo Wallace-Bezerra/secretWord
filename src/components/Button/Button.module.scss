@@ -2,6 +2,7 @@
 
 .btn {
   border: none;
+  font: inherit;
 
   &.play {
     background: $secondary-linear;

@@ -27,6 +27,7 @@ function App() {
 
   const [guessedLetters, setGuessedLetters] = useState([]);
   const [wrongLetters, setWrongLetters] = useState([]);
+  const [repeatedLetters, setRepeatedLetters] = useState(null);
   const [guesses, setGuesses] = useState(10);
   const [score, setScore] = useState(0);
   const [winner, setWinner] = useState(false);
@@ -81,6 +82,11 @@ function App() {
   function verifyLetter(letter) {
     console.log("letra do game", letter);
     if (guessedLetters.includes(letter) || wrongLetters.includes(letter)) {
+      // alert(`Letra ja existe! ${letter}`);
+      setRepeatedLetters(letter);
+      setTimeout(() => {
+        setRepeatedLetters(null);
+      }, 3000);
       return;
     }
 
@@ -98,14 +104,13 @@ function App() {
   useEffect(() => {
     if (letters.length !== 0) {
       const uniqueLetters = [...new Set(letters)];
-      // console.log(uniqueLetters, "dasd");
       if (guessedLetters.length === uniqueLetters.length) {
         let newScore = score;
         setScore((newScore += 100));
 
         console.log(score);
         console.log("ganhou");
-        setWinner(true)
+        setWinner(true);
         setTimeout(() => {
           setGuessedLetters([]);
           startGame();
@@ -135,6 +140,7 @@ function App() {
           letters={letters}
           guessedLetters={guessedLetters}
           wrongLetters={wrongLetters}
+          repeatedLetters={repeatedLetters}
           guesses={guesses}
           score={score}
         />

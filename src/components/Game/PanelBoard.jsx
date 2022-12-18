@@ -4,8 +4,13 @@ function PanelBoard({ letters, guessedLetters, winner }) {
   return (
     <motion.div
       className={style.panelBoard}
-      animate={{ border: true ? "solid 17px #FFFB04" : "white", opacity: [0, 1] }}
-      transition={{ loop: Infinity, duration: 0.8, }}
+      animate={{
+        border: winner ? "solid 17px #fcdd09" : null,
+        boxShadow: winner ? "0px 0px 15px #fcdd09" : null,
+      }}
+      transition={{
+        duration: 0.8,
+      }}
     >
       <div className={style.panelLetter}>
         {letters.map((letter, index) => {
@@ -28,7 +33,7 @@ function PanelBoard({ letters, guessedLetters, winner }) {
           );
         })}
       </div>
-    </motion.div >
+    </motion.div>
   );
 }
 

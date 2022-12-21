@@ -49,11 +49,8 @@ function App() {
 
   function pickWordAndCategory() {
     const categories = Object.keys(words);
-    // console.log(categories);
     const category = categories[Math.floor(Math.random() * categories.length)];
-
     const wordCategory = words[category];
-
     const wordPick =
       wordCategory[
         Math.floor(Math.random() * wordCategory.length)
@@ -71,18 +68,13 @@ function App() {
     console.log(`Palavra: ${wordPick} Categoria: ${category}`);
 
     const letters = wordPick.split("");
-    // console.log(letters);
-
     setPickedWord(wordPick);
     setPickedCategory(category);
     setLetters(letters);
-    // console.log("start letters");
   }, []);
 
   function verifyLetter(letter) {
-    console.log("letra do game", letter);
     if (guessedLetters.includes(letter) || wrongLetters.includes(letter)) {
-      // alert(`Letra ja existe! ${letter}`);
       setRepeatedLetters(letter);
       setTimeout(() => {
         setRepeatedLetters(null);
@@ -91,10 +83,7 @@ function App() {
     }
 
     if (letters.includes(letter)) {
-      console.log(letter);
-      // const newArray = [...guessedLetters, letter];
       setGuessedLetters((prevLetters) => [...prevLetters, letter]);
-      console.log(guessedLetters, "palavra certa na funcção");
     } else {
       setWrongLetters([...wrongLetters, letter]);
       setGuesses((guess) => guess - 1);
@@ -107,9 +96,6 @@ function App() {
       if (guessedLetters.length === uniqueLetters.length) {
         let newScore = score;
         setScore((newScore += 100));
-
-        console.log(score);
-        console.log("ganhou");
         setWinner(true);
         setTimeout(() => {
           setGuessedLetters([]);

@@ -55,7 +55,7 @@ function Game({
         repeatedLetters={repeatedLetters}
         guesses={guesses}
       />
-      <Button handleGame={verifyLetter} text="FIM" />
+      {/* <Button handleGame={verifyLetter} text="FIM" /> */}
     </motion.div>
   );
 }

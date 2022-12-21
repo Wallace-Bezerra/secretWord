@@ -5,11 +5,15 @@ function PanelBoard({ letters, guessedLetters, winner }) {
     <motion.div
       className={style.panelBoard}
       animate={{
-        border: winner ? "solid 17px #fcdd09" : null,
-        boxShadow: winner ? "0px 0px 15px #fcdd09" : null,
+        border: winner
+          ? "solid 17px #fcdd09"
+          : "solid 17px rgba(255, 255, 255, 0.812)",
+        boxShadow: winner
+          ? "0px 0px 15px #fcdd09"
+          : "0px 0px 9px rgba(255, 255, 255, 0.8)",
       }}
       transition={{
-        duration: 0.8,
+        duration: 0.4,
       }}
     >
       <div className={style.panelLetter}>

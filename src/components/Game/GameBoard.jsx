@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Button from "../Button/Button";
 import { motion } from "framer-motion";
 import style from "./GameBoard.module.scss";
@@ -20,31 +20,34 @@ function GameBoard({
   const [isValid, setIsValid] = useState(true);
   const regex = new RegExp("[a-zA-Zà-úÀ-Ú]", "g");
 
-  function handleSubmit() {
+  useEffect(() => {
+    if (!repeatedLetters) {
+      inputElement.current.focus();
+    }
+  }, [repeatedLetters]);
+
+  function handleSubmit(e) {
     if (regex.test(inputElement.current.value.toLowerCase())) {
       setIsValid(true);
-      inputElement.current.focus();
-
       verifyLetter(inputElement.current.value.toLowerCase());
       inputElement.current.value = "";
     } else {
       setIsValid(false);
       inputElement.current.value = "";
-      inputElement.current.focus();
     }
+    inputElement.current.focus();
   }
   function handleKeyEnter(e) {
     if (e.key === "Enter") {
       if (regex.test(inputElement.current.value.toLowerCase())) {
         setIsValid(true);
-        inputElement.current.focus();
         verifyLetter(inputElement.current.value.toLowerCase());
         inputElement.current.value = "";
       } else {
         setIsValid(false);
         inputElement.current.value = "";
-        inputElement.current.focus();
       }
+      inputElement.current.focus();
     }
   }
 
@@ -61,33 +64,33 @@ function GameBoard({
       <div className={style.inputLetter}>
         <motion.input
           animate={{
-            backgroundColor: !isValid ? "#ffdcdc" : "white",
-            border: !isValid ? "solid 3px red" : "none",
+            backgroundColor: !isValid ? "#ffdcdc" : "#fff",
+            border: !isValid ? "solid 3px red" : "solid 0px transparent",
           }}
           transition={{ duration: 0.4 }}
           type="text"
           maxLength="1"
           required
-          // onChange={(e) => {
-          //   setLetter(e.target.value.toLowerCase());
-          // }}
+          disabled={repeatedLetters}
           onKeyDown={handleKeyEnter}
           ref={inputElement}
         />
-        <Button text="JOGAR" typeButton="primary" handleGame={handleSubmit} />
+        <Button
+          text="JOGAR"
+          typeButton="primary"
+          handleGame={handleSubmit}
+          disabled={repeatedLetters}
+        />
         <AnimatePresence>
           {repeatedLetters && <ErrorAlert repeatedLetters={repeatedLetters} />}
-          {/* {repeatedLetters && inputElement.current
-            ? inputElement.current.setAttribute("disabled", true)
-            : inputElement.current.setAttribute("disabled", false)} */}
-          {/* <ErrorAlert repeatedLetters={repeatedLetters} /> */}
         </AnimatePresence>
       </div>
 
       <div className={style.wrongLetters}>
-        {wrongLetters.map((wrongLetter) => {
+        {wrongLetters.map((wrongLetter, index) => {
           return (
             <motion.input
+              key={`${index} ${wrongLetter}`}
               className={style.inputLetter}
               initial={{ translateX: 200 }}
               animate={{ translateX: 0 }}

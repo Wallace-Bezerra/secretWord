@@ -33,19 +33,18 @@
       border: 1px solid rgba(0, 0, 0, 0.79);
       box-shadow: 0px 0px 4px #ffffff;
       border-radius: 5px;
-
     }
   }
 
-  @include responsive(800px) {
-    background-color: red;
+  // @include responsive(800px) {
+  //   background-color: red;
 
-    .panelLetter {
-      min-width: 498px;
-      flex-wrap: wrap;
+  //   .panelLetter {
+  //     min-width: 498px;
+  //     flex-wrap: wrap;
 
-    }
-  }
+  //   }
+  // }
 }
 
 // @keyframes blinker {

@@ -14,7 +14,7 @@ function End({ retryGame, homeGame, score }) {
           <span>SUA PONTUAÇÃO : {score}</span>
         </div>
         <div className={style.btns}>
-          <Button text="INICIO" handleGame={homeGame} />
+          <Button text="INICIO" handleGame={homeGame} typeButton="secondary" />
           <Button
             handleGame={retryGame}
             text="JOGAR NOVAMENTE"

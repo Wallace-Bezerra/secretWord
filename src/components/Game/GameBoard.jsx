@@ -26,7 +26,7 @@ function GameBoard({
     }
   }, [repeatedLetters]);
 
-  function handleSubmit(e) {
+  function handleSubmit() {
     if (regex.test(inputElement.current.value.toLowerCase())) {
       setIsValid(true);
       verifyLetter(inputElement.current.value.toLowerCase());
@@ -85,23 +85,24 @@ function GameBoard({
           {repeatedLetters && <ErrorAlert repeatedLetters={repeatedLetters} />}
         </AnimatePresence>
       </div>
-
-      <div className={style.wrongLetters}>
-        {wrongLetters.map((wrongLetter, index) => {
-          return (
-            <motion.input
-              key={`${index} ${wrongLetter}`}
-              className={style.inputLetter}
-              initial={{ translateX: 200 }}
-              animate={{ translateX: 0 }}
-              transition={{ duration: 0.9, type: "spring", stiffness: 40 }}
-              type="text"
-              value={wrongLetter}
-              disabled={true}
-            />
-          );
-        })}
-      </div>
+      {wrongLetters.length > 0 && (
+        <div className={style.wrongLetters}>
+          {wrongLetters.map((wrongLetter, index) => {
+            return (
+              <motion.input
+                key={`${index} ${wrongLetter}`}
+                className={style.inputLetter}
+                initial={{ translateX: 200 }}
+                animate={{ translateX: 0 }}
+                transition={{ duration: 0.9, type: "spring", stiffness: 40 }}
+                type="text"
+                value={wrongLetter}
+                disabled={true}
+              />
+            );
+          })}
+        </div>
+      )}
 
       <motion.div
         className={style.attempt}

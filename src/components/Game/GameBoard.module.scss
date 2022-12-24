@@ -1,4 +1,5 @@
 @import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
 
 .gameBoard {
   margin: auto;
@@ -70,6 +71,7 @@
     height: 56px;
     background: linear-gradient(345.56deg, #1d232f 37.11%, #4d5565 133.34%);
     border-radius: 8px;
+    margin-top: 45px;
   }
 
   input {
@@ -85,6 +87,82 @@
     &:disabled {
       appearance: none;
       color: #000;
+    }
+  }
+
+  @include responsive(1080px) {
+    padding-inline: 10px;
+    height: auto;
+    h1 {
+      font-size: 28px;
+    }
+
+    .inputLetter {
+      input {
+        width: 65px;
+        font-size: 36px;
+        height: 65px;
+      }
+      button {
+        padding: 8px 12px;
+        font-size: 26px;
+      }
+    }
+    .wrongLetters {
+      input {
+        width: 65px;
+        height: 65px;
+        font-size: 36px;
+      }
+    }
+    .attempt {
+      font-size: 26px;
+      width: 233px;
+    }
+  }
+
+  @include responsive(630px) {
+    margin-top: 40px;
+    max-width: 690px;
+    h1 {
+      font-size: 18px;
+      margin-bottom: 23px;
+    }
+    .inputLetter {
+      input {
+        width: 45px;
+        font-size: 26px;
+        height: 45px;
+      }
+      button {
+        padding: 4px 12px;
+        font-size: 20px;
+      }
+    }
+
+    .wrongLetters {
+      flex-wrap: wrap;
+      input {
+        width: 45px;
+        font-size: 26px;
+        height: 45px;
+      }
+    }
+    .attempt {
+      font-size: 14px;
+      gap: 10px;
+      width: 140px;
+      height: 35px;
+      margin-top: 20px;
+    }
+  }
+
+  @include responsive(430px) {
+    .inputLetter {
+      button {
+        padding: 2px 8px;
+        font-size: 18px;
+      }
     }
   }
 }

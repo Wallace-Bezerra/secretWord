@@ -1,5 +1,5 @@
 @import "../../styles/variables.scss";
-
+@import "../../styles/mixins.scss";
 .bg {
   position: absolute;
   left: 0;
@@ -15,6 +15,7 @@
 header {
   background: linear-gradient(157.3deg, rgba(48, 50, 65, 0.96) 23.42%, rgba(48, 50, 65, 0.9) 68.92%);
   box-shadow: 0px 0px 7px rgb(48 50 65 / 80%);
+  padding-inline: 12px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -69,10 +70,54 @@ header {
       .numberPoints {
         display: flex;
         align-items: center;
-        padding: 10px 9px;
+        padding: 0px 8px;
         background: #495d7b;
         border-radius: 10px;
         text-align: center;
+      }
+    }
+  }
+
+  @include responsive(1080px) {
+    .header {
+      .dica {
+        font-size: 32px;
+      }
+      .redes {
+        max-width: 128px;
+      }
+      .score {
+        font-size: 20px;
+        .numberPoints {
+          padding: 0px 6px;
+          border-radius: 6px;
+        }
+      }
+    }
+  }
+
+  @include responsive(600px) {
+    .header {
+      height: 30px;
+      .dica {
+        font-size: 20px;
+      }
+      .redes {
+        gap: 10px;
+        max-width: 62px;
+        a {
+          img {
+            width: 20px;
+          }
+        }
+      }
+      .score {
+        gap: 8px;
+        font-size: 14px;
+        .numberPoints {
+          font-size: 14px;
+          padding: 0px 4px;
+        }
       }
     }
   }

@@ -13,7 +13,6 @@ export const ErrorAlert = ({ repeatedLetters }) => {
           duration: 1,
           type: "spring",
           stiffness: 40,
-          // bounce: 0,
         },
       }}
       exit={{
@@ -21,7 +20,6 @@ export const ErrorAlert = ({ repeatedLetters }) => {
         opacity: 0,
         transition: { duration: 0.5 },
       }}
-      // transition={{ duration: 0.5, type: "spring", stiffness: 40 }}
     >
       Letra {repeatedLetters ? repeatedLetters.toUpperCase() : null} já usada!
     </motion.span>

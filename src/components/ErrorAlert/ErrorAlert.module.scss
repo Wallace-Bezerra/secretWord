@@ -1,3 +1,4 @@
+@import "../../styles/mixins.scss";
 .errorAlert {
   background: radial-gradient(81.03% 81.03% at 50% 12.07%, #ff540b 0%, #ff540b 100%);
   box-shadow: 0px 0px 20px 3px rgba(255, 84, 11, 0.6);
@@ -9,4 +10,26 @@
   position: absolute;
   left: 90px;
   width: max-content;
+
+  @include responsive(850px) {
+    font-size: 15px;
+    left: 220px;
+    padding: 10px 18px;
+    border-radius: 10px;
+  }
+
+  @include responsive(570px) {
+    font-size: 12px;
+    left: 280px;
+    padding: 8px 12px;
+    border-radius: 10px;
+  }
+  @include responsive(410px) {
+    font-size: 12px;
+    left: 310px;
+    line-height: 16px;
+    max-width: 70px;
+    padding: 8px 18px;
+    border-radius: 10px;
+  }
 }

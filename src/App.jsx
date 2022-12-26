@@ -1,5 +1,3 @@
-// css
-import "./App.css";
 // React
 import { useCallback, useState, useEffect } from "react";
 // data
@@ -35,9 +33,11 @@ function App() {
   useEffect(() => {
     if (guesses <= 0) {
       //reset
-      cleanState();
-      setGuesses(10);
-      setGameStage(stages[2].name);
+      setTimeout(() => {
+        cleanState();
+        setGuesses(10);
+        setGameStage(stages[2].name);
+      }, 3000);
     }
   }, [guesses]);
 
@@ -65,7 +65,7 @@ function App() {
     // picked word and picked letters
     const { wordPick, category } = pickWordAndCategory();
 
-    console.log(`Palavra: ${wordPick} Categoria: ${category}`);
+    // console.log(`Palavra: ${wordPick} Categoria: ${category}`);
 
     const letters = wordPick.split("");
     setPickedWord(wordPick);

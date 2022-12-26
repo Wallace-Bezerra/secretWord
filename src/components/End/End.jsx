@@ -3,10 +3,6 @@ import Button from "../Button/Button";
 
 function End({ retryGame, homeGame, score }) {
   return (
-    // <div>
-    //   <h1>End</h1>
-    //   <Button handleGame={retryGame} text="INICIO" />
-    // </div>
     <div className={style.bg}>
       <div className={style.card}>
         <h1>FIM DE JOGO</h1>

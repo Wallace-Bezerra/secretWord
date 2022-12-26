@@ -27,18 +27,7 @@ function GameBoard({
   }, [repeatedLetters]);
 
   function handleSubmit() {
-    if (regex.test(inputElement.current.value.toLowerCase())) {
-      setIsValid(true);
-      verifyLetter(inputElement.current.value.toLowerCase());
-      inputElement.current.value = "";
-    } else {
-      setIsValid(false);
-      inputElement.current.value = "";
-    }
-    inputElement.current.focus();
-  }
-  function handleKeyEnter(e) {
-    if (e.key === "Enter") {
+    if (guesses > 0) {
       if (regex.test(inputElement.current.value.toLowerCase())) {
         setIsValid(true);
         verifyLetter(inputElement.current.value.toLowerCase());
@@ -48,6 +37,21 @@ function GameBoard({
         inputElement.current.value = "";
       }
       inputElement.current.focus();
+    }
+  }
+  function handleKeyEnter(e) {
+    if (guesses > 0) {
+      if (e.key === "Enter") {
+        if (regex.test(inputElement.current.value.toLowerCase())) {
+          setIsValid(true);
+          verifyLetter(inputElement.current.value.toLowerCase());
+          inputElement.current.value = "";
+        } else {
+          setIsValid(false);
+          inputElement.current.value = "";
+        }
+        inputElement.current.focus();
+      }
     }
   }
 

@@ -159,6 +159,7 @@
 
   @include responsive(430px) {
     .inputLetter {
+      gap: 30px;
       button {
         padding: 2px 8px;
         font-size: 18px;

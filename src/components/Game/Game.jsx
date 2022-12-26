@@ -27,7 +27,7 @@ function Game({
         <div className={style.header}>
           <div className={style.redes}>
             <a href="https://github.com/Wallace-Bezerra" target="_blank">
-              <img src="/Github.svg" alt="github" />
+              <img src="/GitHub.svg" alt="github" />
             </a>
             <a
               href="https://www.linkedin.com/in/wallace-bezerra/"
@@ -55,7 +55,6 @@ function Game({
         repeatedLetters={repeatedLetters}
         guesses={guesses}
       />
-      {/* <Button handleGame={verifyLetter} text="FIM" /> */}
     </motion.div>
   );
 }
